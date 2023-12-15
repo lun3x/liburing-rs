@@ -66,7 +66,7 @@ fn main() {
     }
 
     // Point cargo to libraries.
-    println!("cargo:rustc-link-search=native={}", library_location.unwrap());
+    println!("cargo:rustc-link-search=native={}", library_location.unwrap_or("/usr/lib"));
     for lib_name in &lib_names {
         println!("cargo:rustc-link-lib={}", lib_name);
     }
